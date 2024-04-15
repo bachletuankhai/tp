@@ -476,14 +476,16 @@ otherwise)
    Use case ends.
 
 **Extensions**
+
 1a. Invalid index provided.
 
-- System displays an error message.
+- System informs that the index is invalid.
+  Use case ends.
 
 1b. No notes provided.
 
 - System displays an error message.
-- Use case ends.
+  Use case resumes at step 1.
 
 <br>
 
@@ -512,8 +514,8 @@ otherwise)
 
 **MSS**
 
-1. User requests to find a person by providing a keyword.
-2. System searches and filters for the keyword in the information of people.
+1. User requests to find a person by providing keywords.
+2. System searches and filters for the keywords in the information of people.
 3. System shows the filtered list of people with success message containing number of people found to the user.
 
    Use case ends.
@@ -522,7 +524,7 @@ otherwise)
 
 2a. No one's information contain the keyword.
 
--System displays an empty list.
+- System displays an empty list.
 - Use case ends.
 
 <br>
@@ -540,7 +542,6 @@ otherwise)
 1a. Invalid index(es) provided.
 
 - System displays an error message.
-- Use case ends.
 - Use case ends.
 
 <br>
