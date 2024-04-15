@@ -69,7 +69,7 @@ Each of the four main components (also shown in the diagram above),
 
 - defines its _API_ in an `interface` with the same name as the Component.
 - implements its functionality using a concrete `{Component Name}Manager` class (which follows the corresponding
-  API `interface` mentioned in the previous point.
+  API `interface` mentioned in the previous point).
 
 For example, the `Logic` component defines its API in the `Logic.java` interface and implements its functionality using
 the `LogicManager.java` class which follows the `Logic` interface. Other components interact with a given component
@@ -609,7 +609,7 @@ otherwise)
 
 **MSS**
 
-1. User requests to add an new event.
+1. User requests to add a new event.
 2. User provides valid information for contact details: name, date, and category.
 3. System validates input and adds the event to the list.
 4. System displays a success message.
@@ -629,7 +629,7 @@ otherwise)
 
 **MSS**
 
-1. User requests to remove an specific event.
+1. User requests to remove a specific event.
 2. User provides the ID of event to be removed.
 3. System deletes the event.
 4. System displays a success message.
@@ -726,26 +726,26 @@ testers are expected to do more *exploratory* testing.
 
     1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-    1. Test case: `delete 1`<br>
+    2. Test case: `delete 1`<br>
        Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message.
 
-    1. Test case: `delete 0`<br>
+    3. Test case: `delete 0`<br>
        Expected: No person is deleted. Error details shown in the status message.
 
-    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+    4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
 
-1. Deleting a person while a filtered list is being shown
+2. Deleting a person while a filtered list is being shown
 
    1. Prerequisites: Filter the list using the `find` command (e.g., `find alex`). Multiple persons in the filtered list.
 
-   1. Test case: `delete 1`<br>
+   2. Test case: `delete 1`<br>
       Expected: First contact in the filtered list is deleted. Details of the deleted contact shown in the status message. No change in the contacts that are not in the filtered list.
 
-   1. Test case: `delete 0`<br>
+   3. Test case: `delete 0`<br>
       Expected: No person is deleted. Error details shown in the status message. No change in the contacts that are not in the filtered list.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the filtered list size)<br>
+   4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the filtered list size)<br>
       Expected: Similar to previous.
 
 ### Commenting/Viewing a person
@@ -794,8 +794,8 @@ testers are expected to do more *exploratory* testing.
 
     1. Delete the data file (e.g., `HackLinkData.json`) from the data directory.
 
-   2. Relaunch the app.<br>
-      Expected: The app should create a new data file and load with sample data.
+    2. Relaunch the app.<br>
+       Expected: The app should create a new data file and load with sample data.
 
 ### Undo/Redo
 
@@ -809,7 +809,7 @@ testers are expected to do more *exploratory* testing.
     3. Other commands with extraneous parameters: `undo x`, `undo add`, `undo delete`<br>
        Expected: Similar to previous.
 
-1. Redoing a command
+2. Redoing a command
 
    1. Prerequisites: Undo the last command (add).
 
@@ -819,7 +819,7 @@ testers are expected to do more *exploratory* testing.
    3. Other commands with extraneous parameters: `redo x`, `redo add`, `redo delete`<br>
       Expected: Similar to previous.
 
-1. Redoing after new changes are made
+3. Redoing after new changes are made
 
    1. Prerequisites: Undo the last command (add).
 
@@ -916,14 +916,14 @@ testers are expected to do more *exploratory* testing.
 
 ### Clearing events
 
-2. **Initiate Clearing**:
+1. **Initiate Clearing**:
     - Input the clear command to clear all events from the system.
 
-4. **Verification**:
+2. **Verification**:
     - Ensure that all events are removed from the event list.
     - Verify that the event list is empty after clearing.
 
-5. **Check Impact**:
+3. **Check Impact**:
     - If the application has related functionalities or features affected by event clearing (e.g., statistics, reports),
       verify that they are updated accordingly.
     - Confirm that there are no unintended side effects or data inconsistencies caused by clearing events.
@@ -947,8 +947,8 @@ Team size: 4
 
 3. **Proper undoing of deletion**:
    Currently, undoing a delete command adds the deleted person to the end of the contact list instead of their original
-   position. This can be confusing for users who expect the undo operation to truely revert the deletion. We plan to
-   re-implment the undo feature of the delete command to restore the deleted person to their original position in the
+   position. This can be confusing for users who expect the undo operation to truly revert the deletion. We plan to
+   re-implement the undo feature of the delete command to restore the deleted person to their original position in the
    contact list.
 
 4. **Allow more flexible name for contact**:
