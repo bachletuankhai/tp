@@ -306,7 +306,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 _{more aspects and alternatives to be added}_
 
-### \[Proposed\] Link Feature
+### Link Feature
 
 #### Implementation
 
@@ -349,10 +349,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* * *`  | Student Hackathon Organizer | Add new participants to the contact managing app | Have a centralized database of all hackathon attendees.       |
 | `* * *`  | Student Hackathon Organizer | Update and edit participant contact details      | Ensure accurate and up-to-date information.                   |
 | `* * *`  | Student Hackathon Organizer | Add notes or comments to contact                 | Provide additional context or reminders for each contact.     |
-| `* *`    | Student Hackathon Organizer | View contact count in the database               | Know the number of participants, staff, etc. in the event     |
+| `* * *`  | Student Hackathon Organizer | View contact count in the database               | Know the number of participants, staff, etc. in the event     |
+| `* * *`  | Student Hackathon Organizer | View comment of a specific participant           | Have a quick reference to the important notes for a contact   |
 | `* * *`  | Student Hackathon Organizer | List out members                                 | See all the members in one go                                 |
+| `* * *`  | Student Hackathon Organizer | Find a participant with keyword                  | Effectively search for a specific participant's information   |
+| `* * *`  | Student Hackathon Organizer | Export specific contact details to a CSV file    | Share contact information with sponsors                       |
+| `* * *`  | Student Hackathon Organizer | Remove specific participants                     | remove participants who signed up but unable to participate.  |
 | `* * *`  | Student Hackathon Organizer | Remove specific participants                     | Remove participants who signed up but unable to participate.  |
-| `* * *`  | Student Hackathon Organizer | Remove specific participants                     | remove participants who signed up but unable to participate. |
 | `* * *`  | Student Hackathon Organizer | Group specific participants                      | Know which participants are working together.                |
 | `* * *`  | Student Hackathon Organizer | Group specific staff                             | Assign easily a staff to a group.                            |
 | `* * *`  | Student Hackathon Organizer | Randomly group all participants                  | Quickly ensure that all participants have a group.           |
@@ -432,21 +435,22 @@ otherwise)
 
 <br>
 
-**Use case: Comment**
+**Use case: Add a Comment to person with index**
 
 **MSS**
 
-1. User requests to add notes or comments to a participant.
-2. System prompts for the participant's name and the notes.
-3. User provides notes.
-4. System adds the notes to the participant's profile.
-5. System displays a success message.
+1. User requests to add comments to a person by providing the person's index and the comment.
+2. System replace the old comment data of the participant's into a new comment.
+3. System displays a success message.
 
    Use case ends.
 
 **Extensions**
+1a. Invalid index provided.
 
-3a. No notes provided.
+- System displays an error message.
+
+1b. No notes provided.
 
 - System displays an error message.
 - Use case ends.
@@ -474,6 +478,43 @@ otherwise)
 
 <br>
 
+**Use case: Find Participant by keywords**
+
+**MSS**
+
+1. User requests to find a person by providing a keyword.
+2. System searches and filters for the keyword in the information of people.
+3. System shows the filtered list of people with success message containing number of people found to the user.
+
+   Use case ends.
+   
+ **Extensions**
+
+2a. No one's information contain the keyword.
+
+-System displays an empty list.
+- Use case ends.
+
+<br>
+
+**Use case: Export specific people by indexes**
+
+**MSS**
+
+1. User requests to export specific contact details to a CSV file by providing the indexes of the people.
+2. System reads and exports the contact details to a CSV file.
+3. System displays a success message to the user.
+
+**Extensions**
+
+1a. Invalid index(es) provided.
+
+- System displays an error message.
+- Use case ends.
+- Use case ends.
+
+<br>
+
 **Use case: Group A Participant**
 
 **MSS**
@@ -488,6 +529,24 @@ otherwise)
 **Extensions**
 
 2a. Invalid input provided.
+
+- System displays an error message.
+- Use case ends.
+
+<br>
+
+**Use case: View comment of a specific person**
+
+**MSS**
+
+1. User requests to view the comment of a specific person by providing the index of the person.
+2. System displays the comment of the person.
+
+    Use case ends.
+
+**Extensions**
+
+1a. Invalid index provided.
 
 - System displays an error message.
 - Use case ends.
@@ -657,6 +716,46 @@ testers are expected to do more *exploratory* testing.
    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the filtered list size)<br>
       Expected: Similar to previous.
 
+### Commenting/Viewing a person
+
+1. Commenting
+
+   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+
+   2. Test case: `comment 1 This is a comment`<br>
+     Expected: Comment is added to the first person in the list. The dialog mark is displayed next to the person's name.
+   
+   3. Test case: `comment 0 This is a comment`<br>
+      Expected: No comment is added. Comment command should fail with an error message.
+   
+   4. Other incorrect comment commands to try: `comment`, `comment x another comment` (where x is larger than the list size)<br>
+      Expected: No comment is added. The comment command should fail with an error message.
+   
+2. Viewing a comment
+   1. Prerequisites: Comment added to the first person in the list using the `comment` command. Comment is not added to the second person in the list.
+   
+   2. Test case: `view 1`<br>
+     Expected: The comment added to the first person in the list is displayed with other information.
+   
+   3. Test case: `view 2`<br>
+     Expected: The view command should work without any error message. With other information, the comment is displayed as "No comment provided.".
+   
+   4.  Other incorrect view commands to try: `view`, `view x` (where x is larger than the list size)<br>
+      Expected: The view command should fail with an error message.
+
+3. Link(Exporting a selected list of people to a CSV file to send to sponsors)
+
+   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+
+   2. Test case: `link 1 2 3`<br>
+      Expected: The details(name, email, phone, comment) of the first three persons in the list are exported to a CSV file. The file should be saved in the selectedPeople folder with name list.csv.
+
+   3. Test case: `link 0 2`<br>
+      Expected: No person is exported. Error details shown in the status message.
+
+   4. Other incorrect link commands to try: `link`, `link x` (where x is larger than the list size)<br>
+      Expected: Similar to previous.
+   
 ### Saving data
 
 1. Dealing with missing/corrupted data files
@@ -831,6 +930,10 @@ Team size: 4
 6. **Add an option to not include existing groups for GroupRandom Command**:
    - **Feature Flaw**: Currently, GroupRandom Command will be randomly assigning group numbers, that ranges from 1 to a certain number. This is not ideal for when a hackathon organiser wants to randomize a subset of the contacts without changing the existing groups.
    - **Proposed Fix**: Introduce an option to randomly assigning groups without modifying the existing group members.
+
+7. **Add a way to reset comments for a person**:
+   Currently, it is possible to remove the dialog mark for a person by setting the comment to default command "No comment provided."
+   However, there is no way to remove the comment by commands. We plan to add a command to reset the comment for a person.
      
 ## **Appendix: Effort**
 
