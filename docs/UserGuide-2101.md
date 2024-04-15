@@ -1,36 +1,6 @@
 ---
-layout: page
-title: User Guide
----
-
-WELCOME TO HACKLINK!
-
-## Introduction
-
-Again, Welcome to HackLink! This user guide is designed to help you navigate and utilize this HackLink app to its full
-potential. HackLink is a Hackathon Participant Management Application, designed to help organizers efficiently manage
-contact information for hackathons. This app is aimed at simplifying the management of participant, staff, and sponsor's
-information. With this user guide, you will easily and quickly learn to make use of important features, such as adding,
-deleting, finding, and commenting contacts. you can streamline the complex process of organizing and coordinating your
-hackathon event.
-
-### Target Audience
-
-This user guide is intended for hackathon organizers and coordinators who are looking for a simple and efficient way to
-manage their hackathons. We assume that you have a basic understanding of hackathon event management and are familiar
-with digital tools and CLI-based applications. However, even if you are new to hackathon management, this user guide
-will help you get started with HackLink. No prior experience is required, as this guide will cover all the necessary
-fundamentals to help you get started with HackLink.
-
-### Purpose of this User Guide
-
-The purpose of this user guide is to equip you with a thorough understanding of HackLink. This guide will provide a
-comprehensive overview of the features and functionalities of HackLink. It will guide you through the process of
-installing the application, understanding the UI(user interface), and using the various commands to manage your
-hackathon event. This guide will also provide you with good examples and cautions to help you avoid errors and make the
-best use of the application. By the end of this guide, you will be able to efficiently manage your hackathon
-event using HackLink.
-
+layout: cs2101ug
+title: HackLink User Guide
 ---
 
 ## Table of Contents
@@ -76,34 +46,136 @@ event using HackLink.
 12. [Tips](#tips)
 13. [Command summary](#command-summary)
 
----
+<div style="page-break-after: always;"></div>
 
-## Product Information Overview
-HackLink allows you to manage your hackathon event efficiently by providing following features:
-- Adding/Deleting a person
-- Editing/List/Grouping/Commenting a person
-- Finding a person by keywords
-- Exporting selected people
-- Managing events
+## Introduction
 
----
+> *hack (v)_: to solve a problem in a clever way_<br>
 
-## Quick start
+Welcome to HackLink!
 
-To begin using HackLink, please follow these steps:
+HackLink is a Hackathon Participant Management Application, designed to help organizers efficiently **manage
+contact and event information for hackathons**. This app aims to simplify the management of participants, staffs,
+and sponsors' information through a Command Line Interface (CLI). HackLink can help you manage your hackathon fast,
+especially if you are a _fast typist_ and looking for a way to improve your productivity.
 
-1. Ensure you have Java `11` or above installed in your Computer.
+This user guide is designed to equip you with a thorough understanding of HackLink. You will learn how to **install**,
+**understand the user interface**, and **use various commands** to manage your hackathon event. The guide will also
+provide you with good examples and cautions to help you avoid errors and make the best use of the application. By the
+end of this guide, you will be able to efficiently manage your hackathon event using HackLink.
+
+This user guide is intended for **hackathon organizers and coordinators** who are looking for a simple and efficient way
+to manage their hackathons. We assume that you have a basic understanding of hackathon event management and are familiar
+with digital tools and common computer software. However, even if you are new to hackathon management, this user guide
+will help you get started with HackLink. _No prior experience is required_, as this guide will cover all the necessary
+fundamentals to help you get started with HackLink.
+
+We hope you enjoy using HackLink and find it helpful in managing your hackathon event.
+
+If you have any questions or need further assistance, please feel free to reach out to us at
+[hacklinkdevteam@gmail.com](mailto:hacklinkdevteam@gmail.com).
+
+<div style="text-align: right">Happy hacking*!<br>
+HackLink Development Team
+</div>
+
+
+<div style="page-break-after: always;"></div>
+
+## Using this User Guide
+
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+### Navigation
+
+The [table of contents](#table-of-contents) on the first page is the main way to navigate this user guide. Clicking on a
+link will take you to the corresponding section of the guide.
+
+Under the title of every section, there is a [Back to top](#table-of-contents) link that will take
+you back to the table of contents. You can use this link to quickly navigate to different sections of the guide.
+
+### Meaning of message blocks and icons
+
+Along the way, you will see different types of message blocks with icons. Here is what they mean:
+
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
+:information_source: This block provides **additional information** about the feature or command.
+They are usually notes, constraints, or explanations about the command.
+</div>
+
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-warning">
+:exclamation: This block provides a **warning about potential issues or errors** that may occur when using the feature or command.
+</div>
+
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-primary">
+:bulb: This block provides **tips and suggestions** to help you use the feature or command more effectively.
+</div>
+
+### Where to next?
+
+After learning how to use this guide, you can now actually start using it. Here are some suggestions on what to do next:
+
+- Learn how to download and set up HackLink in [Setting up](#setting-up).
+- Get started with HackLink by following the [Quick start](#quick-start) guide.
+- Understand the [User Interface Basics](#user-interface-basics) to familiarize yourself with the application layout.
+- Get an overview of all available commands in the [Command summary](#command-summary) section.
+- Explore the [Main features](#main-features) of HackLink to learn how to manage your hackathon event.
+- Check out the [Event features](#event-features) to learn how to manage your hackathon events.
+
+<div style="page-break-after: always;"></div>
+
+## User Interface Basics
+
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+Let's take a look at the basic components of the User Interface(UI)!
+
+![annotatedmainwindow](images/annotatedmainwindow.png)
+![annotatedpersoncard](images/annotatedpersoncard.png)
+![annotatedeventwindow](images/annotatedeventwindow.png)
+![annotatedeventcard](images/annotatedeventcard.png)
+
+<div style="page-break-after: always;"></div>
+
+## Setting up
+
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>To begin using HackLink, please follow these steps:
+
+1. Ensure you have Java `11` or above installed in your Computer. Refer to
+   the [Java installation guide](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) for more
+   information.
 
 2. Download the latest `HackLink.jar` from [here](https://github.com/AY2324S2-CS2103T-F12-4/tp/releases).
 
 3. Copy the file to the folder you want to use as the _home folder_ for your HackLink application.
 
-4. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar HackLink.jar` command
-   to run the application.<br>
+4. Open a command terminal at the folder where your `HackLink.jar` file is and run `java -jar HackLink.jar`
+   to start the application.<br>
    A GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
    ![img.png](images/Ui.png)
-5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will
-   open the help window.<br>
+
+<div style="page-break-after: always;"></div>
+
+## Quick start
+
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>Here is a quick guide to get you started with HackLink:
+
+1. Type the command in the command box and press Enter to execute it.
+
+   e.g. typing `help` and pressing Enter will open the help window.<br>
+
    Some example commands you can try:
 
     - `list` : Lists all contacts.
@@ -118,10 +190,10 @@ To begin using HackLink, please follow these steps:
 
     - `exit` : Exits the app.
 
-6. Navigate to the Event Window by clicking on Events in the menubar. Refer to the [Event window](#event-window) section
+2. Navigate to the Event Window by clicking on Events in the menubar. Refer to the [Event window](#event-window) section
    for more details.
 
-7. Type the commands in the command box and press Enter to execute them.
+3. Type the commands in the command box and press Enter to execute them.
 
     - `addevent en/Meeting ed/11-06-2024 ec/staff` : Adds an event named `meeting`.
 
@@ -133,26 +205,31 @@ To begin using HackLink, please follow these steps:
 
     - `clear` : Clears all events
 
-8. Refer to the [Main features](#main-features) below for details of each command.
+4. Refer to the [Main features](#main-features) below for details of each command. Here is a list of what you can do
+   with
+   HackLink:
 
-### Navigating this User Guide
+    - [Adding](#adding-a-person--add)/[Deleting a person](#removing-a-person--delete)
 
----
-## User Interface Basics
+    - [Editing](#editing-a-person--edit)/[List](#listing-all-persons--list)/[Grouping](#grouping-a-person--group)/[Commenting](#commenting-a-person--comment)
+      a person
 
-Let's take a look at the basic components of the User Interface(UI)!
+    - [Finding](#locating-persons-by-keywords--find) a person by keywords
 
-![annotatedmainwindow](images/annotatedmainwindow.png)
-![annotatedpersoncard](images/annotatedpersoncard.png)
-![annotatedeventwindow](images/annotatedeventwindow.png)
-![annotatedeventcard](images/annotatedeventcard.png)
+    - [Exporting](#exporting-selected-people--link) selected people
 
+    - [Managing events](#event-features)
 
----
+<div style="page-break-after: always;"></div>
 
 ## Main features
 
-<div markdown="block" class="alert alert-info">
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 
 **:information_source: Notes about the command format:**<br>
 
@@ -180,23 +257,13 @@ Let's take a look at the basic components of the User Interface(UI)!
 
 </div>
 
-### Viewing help : `help`
-
-Shows a message explaining how to access the help page.
-
-![help message](images/helpMessageHackLink.png)
-
-**Format:** `help`
-
-<div markdown="block" class="alert alert-info">
-:information_source: **Notes:**
-
-`help` cannot be used in event window
-
-</div>
-
 ### Adding a person : `add`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Adds a person to HackLink.
 
 **Format:** `add n/NAME p/PHONE e/EMAIL c/CATEGORY [g/GROUP]`
@@ -225,7 +292,7 @@ Adds a person to HackLink.
 - `add n/Betsy Crowe e/betsycrowe@example.com p/1234567 c/sponsor g/3`
 - `ap n/John Doe e/johnd@example.com p/98765432`
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 :information_source: **Notes about parameter format and behavior:**
 
 - There should be no “/” in each parameter.
@@ -250,6 +317,11 @@ Adds a person to HackLink.
 
 ### Listing all persons : `list`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Shows a list of all persons in HackLink.
 
 The table will show all people's name, email, phone, category, and group.
@@ -258,6 +330,11 @@ The table will show all people's name, email, phone, category, and group.
 
 ### Editing a person : `edit`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Update and edit participant contact details.
 
 **Format:** `edit ID [n/NAME] [p/PHONE] [e/EMAIL] [g/GROUP]`
@@ -270,7 +347,7 @@ Update and edit participant contact details.
 
 **Example:** `edit 1 n/John Doe p/98765432`
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 :information_source: **Notes about parameter format and command constraints:**
 
 - The constraint for each parameter is the same as in [`add` command](#adding-a-person--add).
@@ -288,6 +365,11 @@ Update and edit participant contact details.
 
 ### Grouping a person : `group`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Assigns a participant or a staff to a group.
 
 **Format:** `group ID [GROUP_NUMBER]`
@@ -296,7 +378,8 @@ Assigns a participant or a staff to a group.
 
 - `ID`: the index number of the person in the list.
 - `GROUP_NUMBER` _(optional)_: the group number. Can be any positive integer. When none is provided, the selected person
-  will be randomly assigned to an **existing** group. If there is no existing valid group in the list (non-zero), the group number must be provided.
+  will be randomly assigned to an **existing** group. If there is no existing valid group in the list (non-zero), the
+  group number must be provided.
 
 **Examples:**
 
@@ -309,7 +392,7 @@ Assigns a participant or a staff to a group.
 - After executing `group 1 3`<br>
   ![img.png](images/afterGroup13.png)
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 
 :information_source: **Notes about command constraints:**
 
@@ -326,6 +409,11 @@ Assigns a participant or a staff to a group.
 
 ### Grouping randomly listed persons : `grouprandom`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Assigns a random group to each participant and staff that are currently listed.
 
 **Format:** `grouprandom MAXIMUM_GROUP_SIZE`
@@ -344,7 +432,7 @@ Assigns a random group to each participant and staff that are currently listed.
 - After executing `grouprandom 2`<br>
   ![img.png](images/afterGroupRandom.png)
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 
 :information_source: **Note:** Like `group` command, you can only group staff and participant, sponsor cannot be
 grouped.
@@ -353,6 +441,11 @@ grouped.
 
 ### Commenting a person : `comment`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Add notes or comments to contacts.
 
 **Format:** `comment ID NOTES`
@@ -365,11 +458,12 @@ Add notes or comments to contacts.
 **Example:**
 
 - `comment 1 Allergic to peanuts`
+
   ![img.png](images/comment.png)
 
   The dialog icon appearing next to the person name indicates that they have a comment.
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 
 :information_source: **Note:**
 
@@ -395,6 +489,11 @@ Add notes or comments to contacts.
 
 ### Viewing comments : `view`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 View comment of a specific contact
 
 **Format:** `view ID`
@@ -406,7 +505,7 @@ View comment of a specific contact
 **Example:** `view 1`
 ![img.png](images/viewComment.png)
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 :information_source: **Note:**
 
 - As the maximum number of entries in the contact list is 2147483647, the id should be a positive integer smaller than
@@ -422,8 +521,15 @@ View comment of a specific contact
   differently in the application. It is recommended to use only alphanumeric characters and common punctuation marks
   when making comment. Use of special characters is at your own risk.
 
+</div>
+
 ### Locating persons by keywords : `find`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Finds persons who contain any of the given keywords.
 
 **Format:** `find KEYWORD [MORE_KEYWORDS]…`
@@ -448,6 +554,11 @@ Finds persons who contain any of the given keywords.
 
 ### Exporting selected people : `link`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Produce a csv file with selected contacts' information.
 The csv file will be saved in the `selectedPeople` folder with the name `list.csv`.
 
@@ -457,7 +568,7 @@ The csv file will be saved in the `selectedPeople` folder with the name `list.cs
 
 - `ID`, `MORE_ID`: index(es) of the selected contact(s)
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 
 :information_source: **Notes on parameter constraints:**
 
@@ -474,7 +585,7 @@ The csv file will be saved in the `selectedPeople` folder with the name `list.cs
 - `link 1` returns a csv file with the information of person with index 1
 - `link 1 2 3 4 5` returns a csv file with the information of people 1, 2, 3, 4, and 5
 
-<div markdown="block" class="alert alert-warning">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-warning">
 
 :exclamation: **Caution:**
 
@@ -491,6 +602,11 @@ The csv file will be saved in the `selectedPeople` folder with the name `list.cs
 
 ### Removing a person : `delete`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Deletes the person identified by the index shown in the displayed person list.
 
 **Format:** `delete ID`
@@ -503,9 +619,16 @@ Deletes the person identified by the index shown in the displayed person list.
 
 - `delete 1` deletes the first person in the list.
 
+<div style="page-break-after: always;"></div>
+
 ## Event features
 
-<div markdown="block" class="alert alert-info">
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 
 :information_source: **Note**: For event features, you need to navigate to the event window by clicking on the Events
 menu in the menubar.
@@ -515,6 +638,11 @@ Refer to the [Event Window](#event-window) section for more details.
 
 ### Adding an event : `addevent`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Adds an event to HackLink with a name, date and category where the category represents who the event involves.
 
 **Format:** `addevent en/EVENTNAME ed/EVENTDATE ec/EVENTCATEGORY`
@@ -530,7 +658,7 @@ Adds an event to HackLink with a name, date and category where the category repr
 - `addevent en/conference ed/22-06-2024 ec/participant`
 - `addevent en/meeting ed/11-06-2024 ec/staff`
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 
 :information_source: **Note:** This app is designed for small hackathons. However, the maximum number of events entries
 is 2147483647. Please delete some events to add a new event if you reach the limit.
@@ -539,6 +667,11 @@ is 2147483647. Please delete some events to add a new event if you reach the lim
 
 ### Listing all events : `listevent`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Shows a list of all events in HackLink.
 The table will show all the data
 
@@ -546,6 +679,11 @@ The table will show all the data
 
 ### Removing an event : `deleteevent`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Remove specific events from the database.
 
 **Format:** `deleteevent ID`
@@ -560,6 +698,11 @@ Remove specific events from the database.
 
 ### Locating events by keywords : `findevent`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Finds events which contain any of the given keywords.
 
 **Format:** `findevent KEYWORD [MORE_KEYWORDS]`
@@ -579,6 +722,11 @@ Finds events which contain any of the given keywords.
 
 ### Clearing all entries : `clear`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Clears all entries from the database, either the persons or events.
 
 **Format:** `clear`
@@ -588,6 +736,11 @@ Clears all entries from the database, either the persons or events.
 
 ### Exiting the program : `exit`
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Exits the program.
 
 **Format:** `exit`
@@ -596,25 +749,42 @@ Exits the program.
 
 **Note**: `exit` cannot be used in event window
 
+<div style="page-break-after: always;"></div>
+
 ## Utility features
 
 ### Saving the data
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 HackLink data are saved in the hard disk automatically after any command that changes the data. There is no need to save
 manually.
 
 ### Editing the data file
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 HackLink data are saved automatically as a JSON file `[JAR file location]/data/addressbook.json`. Advanced users are
 welcome to update data directly by editing that data file.
 
-<div markdown="block" class="alert alert-warning">:exclamation: **Caution:**<br>
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-warning">:exclamation: **Caution:**<br>
 If your changes to the data file makes its format invalid, HackLink will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.<br>
 Furthermore, certain edits can cause the HackLink to behave in unexpected ways (e.g., if the value entered is outside the acceptable range). Therefore, edit the data file only if you are confident that you can update it correctly.
 </div>
 
 ### Undo
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 You can undo the last **changes made to the contact list** by using `undo` command. This will revert the last command
 that changed the data.
 
@@ -624,13 +794,18 @@ that changed the data.
 
 ### Redo
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 You can redo the last command that was undone by using `redo` command.
 
 **Format:** `redo`
 
 **Aliases:** `rd`
 
-<div markdown="block" class="alert alert-info">
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
 
 :information_source: **Note:** `undo` and `redo` currently are **not supported on event window**. This means that you
 cannot use these commands to revert the changes made to the event list.
@@ -639,11 +814,21 @@ cannot use these commands to revert the changes made to the event list.
 
 ### Navigating to older commands
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 HackLink allows you to navigate to older commands using the up and down arrow keys. This feature is useful when you want
 to repeat a command you have previously entered.
 
 ### Aliases
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Aliases are shortcuts for commands. In each command, you can use the alias in place of the command word, unless
 specified otherwise by the command. Please refer to each command details for the alias.<br>
 
@@ -659,6 +844,11 @@ specified otherwise by the command. Please refer to each command details for the
 
 ### Shortcuts
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Shortcuts are a way to quickly perform action from the keyboard. The available shortcuts are:
 
 - `F1` : Opens the help window
@@ -666,10 +856,35 @@ Shortcuts are a way to quickly perform action from the keyboard. The available s
 - `F3` : Focus on the result box (to scroll up and down in case of overflow)
 - `F4` : Focus on the list of contacts (to scroll up and down in case of overflow)
 
----
+### Viewing help : `help`
+
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
+Shows a message explaining how to access the help page.
+
+![help message](images/helpMessageHackLink.png)
+
+**Format:** `help`
+
+<div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
+:information_source: **Notes:**
+
+`help` cannot be used in event window
+
+</div>
+
+<div style="page-break-after: always;"></div>
 
 ## Event window
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 Events are shown in a separate window. You can navigate to the event window by clicking on the Events menu in the
 menubar.
 
@@ -680,10 +895,15 @@ the app contains some sample data for the events.<br>
 You can get back to the main window by clicking on the Back to Main on the menubar.<br>
 ![Ui](images/backToMain.png)
 
----
+<div style="page-break-after: always;"></div>
 
 ## FAQ
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains
 the data of your previous HackLink home folder.
@@ -692,6 +912,11 @@ the data of your previous HackLink home folder.
 
 ## Warnings
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 1. **Invalid Command** : When a command format is incorrect or parameters are missing, the application will prompt the
    user with a warning message.
 2. **Command Failure** : If the person specified for editing or removing does not exist in the database, the application
@@ -703,6 +928,11 @@ the data of your previous HackLink home folder.
 
 ## Known issues
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only
    the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the
    application before running the application again.
@@ -721,6 +951,11 @@ the data of your previous HackLink home folder.
 
 ## Tips
 
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
 1. **Use Descriptive Command Names**: You are encouraged to use descriptive names when adding, updating, or removing
    participants. This makes it easier to identify and manage individuals within the application.
 2. **Utilize the utility features**: The application provides utility features such as navigating to older commands,
@@ -730,7 +965,13 @@ the data of your previous HackLink home folder.
 
 ## Command summary
 
-| Action             | Format, Examples                                                                                                                         |
+<div style="margin-top: -1.5em; font-size: 0.8em; color: #777;">
+<a href="#table-of-contents" >Back to top</a>
+</div>
+
+<br>
+
+| Action             | Format & Examples                                                                                                                        |
 |--------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | **Add**            | `add n/NAME p/PHONE_NUMBER e/EMAIL c/CATEGORY [g/GROUP]​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com c/participant g/3` |
 | **Clear**          | `clear`                                                                                                                                  |
