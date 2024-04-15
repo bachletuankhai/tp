@@ -416,6 +416,8 @@ View comment of a specific contact
 
 - `Redo` and `Undo` commands are not supported for `view` command.
 
+</div>
+
 ### Locating persons by keywords : `find`
 
 Finds persons who contain any of the given keywords.
