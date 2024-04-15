@@ -69,7 +69,7 @@ Each of the four main components (also shown in the diagram above),
 
 - defines its _API_ in an `interface` with the same name as the Component.
 - implements its functionality using a concrete `{Component Name}Manager` class (which follows the corresponding
-  API `interface` mentioned in the previous point.
+  API `interface` mentioned in the previous point).
 
 For example, the `Logic` component defines its API in the `Logic.java` interface and implements its functionality using
 the `LogicManager.java` class which follows the `Logic` interface. Other components interact with a given component
@@ -376,19 +376,19 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 | Priority | As a …​                     | I want to …​                                     | So that I can…​                                               |
 |----------|-----------------------------|--------------------------------------------------|---------------------------------------------------------------|
-| `* * *`  | Student Hackathon Organizer | Add new participants to the contact managing app | Have a centralized database of all hackathon attendees.       |
-| `* * *`  | Student Hackathon Organizer | Update and edit participant contact details      | Ensure accurate and up-to-date information.                   |
+| `* * *`  | Student Hackathon Organizer | Add new persons to the contact managing app      | Have a centralized database of all hackathon attendees.       |
+| `* * *`  | Student Hackathon Organizer | Update and edit person contact details           | Ensure accurate and up-to-date information.                   |
 | `* * *`  | Student Hackathon Organizer | Add notes or comments to contact                 | Provide additional context or reminders for each contact.     |
-| `* * *`  | Student Hackathon Organizer | View contact count in the database               | Know the number of participants, staff, etc. in the event     |
-| `* * *`  | Student Hackathon Organizer | View comment of a specific participant           | Have a quick reference to the important notes for a contact   |
+| `* * *`  | Student Hackathon Organizer | View contact count in the database               | Know the number of participants, staff and sponsors in the event     |
+| `* * *`  | Student Hackathon Organizer | View comment of a specific person                | Have a quick reference to the important notes for a contact   |
 | `* * *`  | Student Hackathon Organizer | List out members                                 | See all the members in one go                                 |
-| `* * *`  | Student Hackathon Organizer | Find a participant with keyword                  | Effectively search for a specific participant's information   |
+| `* * *`  | Student Hackathon Organizer | Find a person with keyword                       | Effectively search for a specific person's information   |
 | `* * *`  | Student Hackathon Organizer | Export specific contact details to a CSV file    | Share contact information with sponsors                       |
-| `* * *`  | Student Hackathon Organizer | Remove specific participants                     | remove participants who signed up but unable to participate.  |
-| `* * *`  | Student Hackathon Organizer | Remove specific participants                     | Remove participants who signed up but unable to participate.  |
+| `* * *`  | Student Hackathon Organizer | Remove specific persons                          | remove participants who signed up but unable to participate.  |
+| `* * *`  | Student Hackathon Organizer | Remove specific persons                          | Remove persons who are no longer involved in the hackathon.  |
 | `* * *`  | Student Hackathon Organizer | Group specific participants                      | Know which participants are working together.                |
 | `* * *`  | Student Hackathon Organizer | Group specific staff                             | Assign easily a staff to a group.                            |
-| `* * *`  | Student Hackathon Organizer | Randomly group all participants                  | Quickly ensure that all participants have a group.           |
+| `* * *`  | Student Hackathon Organizer | Randomly group all participants and staff     | Quickly ensure that all participants and staff have a group.           |
 | `* * *`  | Student Hackathon Organizer | Add events for specific categories of people     | Have a database with all the events related to hackathon.     |
 | `* * *`  | Student Hackathon Organizer | Delete event                                     | Remove events that have been cancelled or no longer relevant. |
 | `* * *`  | Student Hackathon Organizer | Find events                                      | Find details such as date and category of an upcoming event   |
@@ -432,24 +432,24 @@ otherwise)
 
 <br>
 
-**Use case: View Participant List**
+**Use case: View Persons List**
 
 **MSS**
 
-1. User requests to view the list of all participants.
+1. User requests to view the list of all persons.
 2. System displays the list with relevant information.
-3. System shows the total count of participants.
+3. System shows the total count of persons.
 
    Use case ends.
 
 <br>
 
-**Use case: Update Participant Contact Details**
+**Use case: Update Person Contact Details**
 
 **MSS**
 
-1. User requests to update contact details for a specific participant.
-2. System prompts for the participant's name and the field to update.
+1. User requests to update contact details for a specific person.
+2. System prompts for the person's name and the field to update.
 3. User provides valid information.
 4. System validates input and updates the contact details.
 5. System displays a success message.
@@ -470,50 +470,52 @@ otherwise)
 **MSS**
 
 1. User requests to add comments to a person by providing the person's index and the comment.
-2. System replace the old comment data of the participant's into a new comment.
+2. System replace the old comment data of the person's into a new comment.
 3. System displays a success message.
 
    Use case ends.
 
 **Extensions**
+
 1a. Invalid index provided.
 
-- System displays an error message.
+- System informs that the index is invalid.
+  Use case ends.
 
 1b. No notes provided.
 
 - System displays an error message.
-- Use case ends.
+  Use case resumes at step 1.
 
 <br>
 
-**Use case: Remove Participant**
+**Use case: Remove Person**
 
 **MSS**
 
-1. User requests to remove a specific participant.
-2. System prompts for the participant's ID.
+1. User requests to remove a specific person.
+2. System prompts for the person's ID.
 3. User provides the ID.
-4. System deletes the participant.
+4. System deletes the person.
 5. System displays a success message.
 
    Use case ends.
 
 **Extensions**
 
-3a. Participant not found.
+3a. Person not found.
 
 - System displays an error message.
 - Use case ends.
 
 <br>
 
-**Use case: Find Participant by keywords**
+**Use case: Find Person by keywords**
 
 **MSS**
 
-1. User requests to find a person by providing a keyword.
-2. System searches and filters for the keyword in the information of people.
+1. User requests to find a person by providing keywords.
+2. System searches and filters for the keywords in the information of people.
 3. System shows the filtered list of people with success message containing number of people found to the user.
 
    Use case ends.
@@ -522,7 +524,7 @@ otherwise)
 
 2a. No one's information contain the keyword.
 
--System displays an empty list.
+- System displays an empty list.
 - Use case ends.
 
 <br>
@@ -541,17 +543,16 @@ otherwise)
 
 - System displays an error message.
 - Use case ends.
-- Use case ends.
 
 <br>
 
-**Use case: Group A Participant**
+**Use case: Group A Participant or Staff**
 
 **MSS**
 
-1. User requests to group a specific participant to a specific group.
-2. User provides valid information: participant's ID and group number.
-3. System groups the participant into the group number.
+1. User requests to group a specific participant or staff to a specific group.
+2. User provides valid information: participant/staff's ID and group number.
+3. System groups the participant/staff into the group number.
 4. System displays a success message.
 
    Use case ends.
@@ -583,14 +584,14 @@ otherwise)
 
 <br>
 
-**Use case: Randomly Group All Participant**
+**Use case: Randomly Group All Participants/Staff**
 
 **MSS**
 
-1. User requests to find participant in the current list.
-2. User requests to group randomly all persons in the current list.
+1. User requests to find participant/staff in the current list.
+2. User requests to group randomly all participants/staff in the current list.
 3. User provides valid maximum group size.
-4. System assigns randomly all participants into a group, where each group
+4. System assigns randomly all participants/staff into a group, where each group
    size is less than or equal to the maximum group size.
 5. System displays a success message.
 
@@ -609,7 +610,7 @@ otherwise)
 
 **MSS**
 
-1. User requests to add an new event.
+1. User requests to add a new event.
 2. User provides valid information for contact details: name, date, and category.
 3. System validates input and adds the event to the list.
 4. System displays a success message.
@@ -629,7 +630,7 @@ otherwise)
 
 **MSS**
 
-1. User requests to remove an specific event.
+1. User requests to remove a specific event.
 2. User provides the ID of event to be removed.
 3. System deletes the event.
 4. System displays a success message.
@@ -675,7 +676,7 @@ otherwise)
 
 1. Should work on any _mainstream OS_ as long as it has Java `11` or above installed.
 2. Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
-3. The application should be designed to scale gracefully, accommodating an increase in the number of participants or
+3. The application should be designed to scale gracefully, accommodating an increase in the number of persons or
    contacts without significant degradation in performance.
 4. The codebase should follow best practices and be well-documented to facilitate future maintenance and updates by
    developers.
@@ -687,7 +688,9 @@ otherwise)
 - **Mainstream OS**: Windows, Linux, Unix, MacOS
 - **Java 11**: A version of the Java programming language and runtime environment, required for running the application
 - **Participant**: An individual registered to participate in the hackathon
-- **ID**: A unique identifier assigned to each participant in the system
+- **Staff**: An individual working at/overseeing the hackathon
+- **Sponsor**: An individual who is a sponsor for the hackathon
+- **ID**: A unique identifier assigned to each person in the system
 
 ---
 
@@ -724,26 +727,26 @@ testers are expected to do more *exploratory* testing.
 
     1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
 
-    1. Test case: `delete 1`<br>
+    2. Test case: `delete 1`<br>
        Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message.
 
-    1. Test case: `delete 0`<br>
+    3. Test case: `delete 0`<br>
        Expected: No person is deleted. Error details shown in the status message.
 
-    1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+    4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
        Expected: Similar to previous.
 
-1. Deleting a person while a filtered list is being shown
+2. Deleting a person while a filtered list is being shown
 
    1. Prerequisites: Filter the list using the `find` command (e.g., `find alex`). Multiple persons in the filtered list.
 
-   1. Test case: `delete 1`<br>
+   2. Test case: `delete 1`<br>
       Expected: First contact in the filtered list is deleted. Details of the deleted contact shown in the status message. No change in the contacts that are not in the filtered list.
 
-   1. Test case: `delete 0`<br>
+   3. Test case: `delete 0`<br>
       Expected: No person is deleted. Error details shown in the status message. No change in the contacts that are not in the filtered list.
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the filtered list size)<br>
+   4. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the filtered list size)<br>
       Expected: Similar to previous.
 
 ### Commenting/Viewing a person
@@ -792,8 +795,8 @@ testers are expected to do more *exploratory* testing.
 
     1. Delete the data file (e.g., `HackLinkData.json`) from the data directory.
 
-   2. Relaunch the app.<br>
-      Expected: The app should create a new data file and load with sample data.
+    2. Relaunch the app.<br>
+       Expected: The app should create a new data file and load with sample data.
 
 ### Undo/Redo
 
@@ -807,7 +810,7 @@ testers are expected to do more *exploratory* testing.
     3. Other commands with extraneous parameters: `undo x`, `undo add`, `undo delete`<br>
        Expected: Similar to previous.
 
-1. Redoing a command
+2. Redoing a command
 
    1. Prerequisites: Undo the last command (add).
 
@@ -817,7 +820,7 @@ testers are expected to do more *exploratory* testing.
    3. Other commands with extraneous parameters: `redo x`, `redo add`, `redo delete`<br>
       Expected: Similar to previous.
 
-1. Redoing after new changes are made
+3. Redoing after new changes are made
 
    1. Prerequisites: Undo the last command (add).
 
@@ -847,10 +850,10 @@ testers are expected to do more *exploratory* testing.
 
 ### Group randomly all persons
 
-1. **Randomly grouping all participants and staffs in the list**
+1. **Randomly grouping all participants and staff in the list**
    1. Prerequisites: Multiple persons in the list.
    2. Test case: `grouprandom 3`<br>
-      Expected: All participants and staffs are assigned into a random group number.
+      Expected: All participants and staff are assigned into a random group number.
       Each group have less than or equal to 3 members.
    3. Test case: `grouprandom x` (where x is larger than the list size) <br>
       Expected: All participants and staffs are assigned into group 1.
@@ -914,14 +917,14 @@ testers are expected to do more *exploratory* testing.
 
 ### Clearing events
 
-2. **Initiate Clearing**:
+1. **Initiate Clearing**:
     - Input the clear command to clear all events from the system.
 
-4. **Verification**:
+2. **Verification**:
     - Ensure that all events are removed from the event list.
     - Verify that the event list is empty after clearing.
 
-5. **Check Impact**:
+3. **Check Impact**:
     - If the application has related functionalities or features affected by event clearing (e.g., statistics, reports),
       verify that they are updated accordingly.
     - Confirm that there are no unintended side effects or data inconsistencies caused by clearing events.
@@ -945,8 +948,8 @@ Team size: 4
 
 3. **Proper undoing of deletion**:
    Currently, undoing a delete command adds the deleted person to the end of the contact list instead of their original
-   position. This can be confusing for users who expect the undo operation to truely revert the deletion. We plan to
-   re-implment the undo feature of the delete command to restore the deleted person to their original position in the
+   position. This can be confusing for users who expect the undo operation to truly revert the deletion. We plan to
+   re-implement the undo feature of the delete command to restore the deleted person to their original position in the
    contact list.
 
 4. **Allow more flexible name for contact**:
