@@ -47,8 +47,6 @@ title: HackLink User Guide
 13. [Known issues](#known-issues)
 14. [Command summary](#command-summary)
 
-<div style="page-break-after: always;"></div>
-
 ## Introduction
 
 > <sub>*hack (v)_: to solve a problem in a clever way_</sub><br>
@@ -158,12 +156,35 @@ After learning how to use this guide, you can now actually start using it. Here 
 <a href="#table-of-contents" >Back to top</a>
 </div>
 
+<br>
+
 Let's take a look at the basic components of the User Interface(UI)!
 
-![annotatedmainwindow](images/annotatedmainwindow.png)
-![annotatedpersoncard](images/annotatedpersoncard.png)
-![annotatedeventwindow](images/annotatedeventwindow.png)
-![annotatedeventcard](images/annotatedeventcard.png)
+### Main window
+
+![mainwindow](images/MainWindow_annotated.png)
+
+| Component    | Description                                                                |
+|--------------|----------------------------------------------------------------------------|
+| Menu bar     | Contains some action buttons like File, Help, and Events.                  |
+| Command box  | Type your command here                                                     |
+| Result box   | Shows the result of the command                                            |
+| Contact list | Shows the list of contacts. This is turned into event list in event window |
+| Status bar   | Shows the current data file                                                |
+
+### Person card
+
+![personcard](images/PersonCard_annotated.png)
+
+Contact list is a table, each row represents a contact.
+
+| Component          | Description                                                                                           |
+|--------------------|-------------------------------------------------------------------------------------------------------|
+| ID                 | Index of the contact in the list, used in various commands                                            |
+| Name, Phone, Email | Contact's information                                                                                 |
+| Category           | Participant, Sponsor, or Staff                                                                        |
+| Group              | Group number of the contact. See [Grouping a person](#grouping-a-person--group).                      |
+| Comment icon       | Shows if the contact has a comment. Use [`view` command](#viewing-comments--view) to see the comment. |
 
 <div style="page-break-after: always;"></div>
 
@@ -895,13 +916,8 @@ Shows a message explaining how to access the help page. The URL will lead to the
 **Format:** `help`
 
 <div markdown="block" style="page-break-inside: avoid" class="alert alert-info">
-:information_source: **Notes:**
-
-`help` cannot be used in event window
-
+:information_source: **Note:** `help` cannot be used in event window
 </div>
-
-<div style="page-break-after: always;"></div>
 
 ## Event window
 
@@ -929,9 +945,12 @@ You can get back to the main window by clicking on the Back to Main on the menub
 </div>
 
 <br>
+
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains
 the data of your previous HackLink home folder.
+
+
 
 ---
 
@@ -942,6 +961,7 @@ the data of your previous HackLink home folder.
 </div>
 
 <br>
+
 1. **Invalid Command** : When a command format is incorrect or parameters are missing, the application will prompt the
    user with a warning message.
 2. **Command Failure** : If the person specified for editing or removing does not exist in the database, the application
