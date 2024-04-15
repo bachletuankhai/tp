@@ -134,8 +134,6 @@ To begin using HackLink, please follow these steps:
 
 8. Refer to the [Main features](#main-features) below for details of each command.
 
-### Navigating this User Guide
-
 ---
 
 ## Main features
@@ -229,7 +227,7 @@ Adds a person to HackLink.
 - `CATEGORY` is case-insensitive, e.g. `c/participant` and `c/PARTICIPANT` will set the person inserted as a
   participant.
 
-- If no `g/GROUP` is provided, the person will be assigned to default group 0 in the list.
+- If no `g/GROUP` is provided, the person who is not sponsor will be assigned to default group 0 in the list.
 
 - This app is designed for small hackathons, with around 500 participants. However, the maximum number of entries in the
   contact list is 2147483647. Please delete some contacts to add a new person if you reach the limit.
