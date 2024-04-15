@@ -134,7 +134,7 @@ After learning how to use this guide, you can now actually start using it. Here 
 
 <br>To begin using HackLink, please follow these steps:
 
-1. Ensure you have Java `11` or above installed in your Computer. Refer to
+1. Ensure you have **Java `11`** installed in your computer. Refer to
    the [Java installation guide](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) for more
    information.
 
@@ -931,10 +931,12 @@ menubar.
 
 An event window will appear with a list of events. You can add, delete, and find events in the event window. Note how
 the app contains some sample data for the events.<br>
-![Ui](images/toEventsWindowUpdated.png)
+
+<img src="images/toEventsWindowUpdated.png" width="500">
 
 You can get back to the main window by clicking on the Back to Main on the menubar.<br>
-![Ui](images/backToMain.png)
+
+<img src="images/backToMain.png" width="500">
 
 <div style="page-break-after: always;"></div>
 
@@ -949,6 +951,13 @@ You can get back to the main window by clicking on the Back to Main on the menub
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains
 the data of your previous HackLink home folder.
+
+**Q**: How to check if I have Java 11 on my computer?<br>
+**A**: Open terminal, run `java -v`. You should be able to see your current version of Java. If you don't have Java
+installed, there should be an error message saying so.
+
+**Q**: I have Java installed on my computer, but it is not version 11. Can I use HackLink with it?<br>
+**A**: The application can work with Java newer than version 11, but it is recommended to run it with Java 11.
 
 
 
